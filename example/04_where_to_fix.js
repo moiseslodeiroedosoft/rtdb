@@ -25,10 +25,3 @@ querySnapshot.forEach((doc) => {
   console.log(doc.id);
   console.table(doc.data());
 });
-
-const e = query(collection(db, "movies"), where("genres", "array-contains-any", ["Comedy"])); // No confundir con el "in"
-querySnapshot = await getDocs(e);
-querySnapshot.forEach((doc) => {
-  console.log(doc.id);
-  console.table(doc.data());
-});

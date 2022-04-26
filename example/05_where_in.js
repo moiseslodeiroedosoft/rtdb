@@ -17,9 +17,8 @@ const firebaseConfig = {
 const db = getFirestore(initializeApp(firebaseConfig));
 
 // --------------------------------------------------------
-
-const q = query(collection(db, "movies"), where("genres", "array-contains-any", ["Comedy"]));
-querySnapshot = await getDocs(q);
+const q = query(collection(db, "movies"), where("year", "in", ["2008", "2009"])); // Equivale a where X == 2008 || X == 2009
+const querySnapshot = await getDocs(q);
 querySnapshot.forEach((doc) => {
   console.log(doc.id);
   console.table(doc.data());
