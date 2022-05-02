@@ -1,3 +1,7 @@
+/**
+ * @see https://firebase.google.com/docs/reference/js/firestore_lite
+ */
+
 import { initializeApp } from 'firebase/app';
 import { getFirestore, collection, getDocs, setDoc, doc} from 'firebase/firestore/lite';
 import 'dotenv/config'
