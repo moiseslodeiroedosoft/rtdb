@@ -20,7 +20,7 @@ const db = getFirestore(initializeApp(firebaseConfig));
 
 // Analiza el siguiente código y revisa qué pasa
 const q = query(collection(db, "movies"), where("runtime", "<", 150));
-querySnapshot = await getDocs(q);
+const querySnapshot = await getDocs(q);
 querySnapshot.forEach((doc) => {
   console.log(doc.id);
   console.table(doc.data());
